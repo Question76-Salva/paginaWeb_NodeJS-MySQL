@@ -1,0 +1,36 @@
+<%- include layouts/header.ejs %>
+
+  <!-- ================= -->
+  <!-- === contenido === -->
+  <!-- ================= -->
+  <div class="container mt-4">
+        
+    <h1><%= title %></h1>
+    
+    <div class="row">
+
+      <!-- ============================================================ -->
+      <!-- === mostrar la info que viene de la bbdd | dinámicamente === -->
+      <!-- ============================================================ -->
+      <% for(let libro = 0; libro < Libros.length; libro++) { %>
+       
+        <div class="col-sm-6">
+          <div class="card shadow m-3">
+            <div class="card-body">
+              <img src="<%= Libros[libro].imagen %>" class="card-img" alt="Imagen libro">
+              <h5 class="card-title"> <%= Libros[libro].titulo %> </h5>
+              <p class="card-text"> <%= Libros[libro].descripcion %> </p>
+              <h6 class="card-text"> <%= Libros[libro].precio %>€ </h6>
+              <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+      <% } %>
+
+                
+    </div>
+
+  </div>
+  
+<%- include layouts/footer.ejs %>
